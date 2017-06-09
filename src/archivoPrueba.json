@@ -1,0 +1,24 @@
+{
+	"materias": [
+		{
+			"nombre": "matematica", 
+			"inicio": 1000,
+			"fin": 1200
+		},
+		{
+			"nombre": "fisica", 
+			"inicio": 1100,
+			"fin": 1300
+		},
+		{
+			"nombre": "programacion", 
+			"inicio": 1800,
+			"fin": 2000
+		},
+		{
+			"nombre": "literatura", 
+			"inicio": 1500,
+			"fin": 1700
+		}
+	]
+}

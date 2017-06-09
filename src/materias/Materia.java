@@ -54,5 +54,9 @@ public class Materia {
 		this._indice = _indice;
 	}
 	
+	public String toString(){
+		return _nombre + " " +_hora_inicio+" "+_hora_fin;
+	}
+	
 	
 }
