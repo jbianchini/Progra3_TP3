@@ -31,9 +31,4 @@ public class Loader {
 		return null;
 	}
 	
-	// D:\repository\Progra3_TP3\src
-	public static void main(String[] args){
-		ArrayList<Materia> materias = obtenerMaterias("D:/repository/Progra3_TP3/src/archivoPrueba.json");
-		System.out.println(materias.toString());
-	}
 }

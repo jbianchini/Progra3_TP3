@@ -4,7 +4,6 @@ public class Materia {
 	private String _nombre;
 	private int _hora_inicio;
 	private int _hora_fin;
-	private int _indice;
 	
 	//TODO: ver como hacer para poder introducir las horas con regular expression, para evitar que se vayan de rango
 	public Materia(String nombre, int hora_inicio, int hora_fin, int indice){
@@ -12,7 +11,6 @@ public class Materia {
 		_nombre = nombre;
 		_hora_inicio = hora_inicio;
 		_hora_fin = hora_fin;
-		_indice = indice;
 	}
 	
 	private void verificarHorario(int hora_inicio, int hora_fin){
@@ -46,16 +44,8 @@ public class Materia {
 		this._hora_fin = _hora_fin;
 	}
 	
-	public int get_indice() {
-		return _indice;
-	}
-
-	public void set_indice(int _indice) {
-		this._indice = _indice;
-	}
-	
 	public String toString(){
-		return _nombre + " " +_hora_inicio+" "+_hora_fin;
+		return _nombre + " de " +_hora_inicio+" a "+_hora_fin +"\n";
 	}
 	
 	

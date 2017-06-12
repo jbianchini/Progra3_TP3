@@ -3,16 +3,18 @@ package materias;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class GrafoMateriasTest {
 	Materia matematica = new Materia("Matematica", 1100, 1200, 0);
 	Materia historia = new Materia("Historia", 1100, 1200, 1);
 	Materia fisica = new Materia("Fisica", 1400, 1600, 2);
-	Materia programacion = new Materia("Matematica", 1500, 1800, 3);
+	Materia programacion = new Materia("Programacion", 1500, 1800, 3);
 	
-	@Test
+	@Ignore
 	public void testGrafoMaterias(){
 		ArrayList<Materia> materias = new ArrayList<>();
 		
@@ -42,5 +44,18 @@ public class GrafoMateriasTest {
 	@Test 
 	public void testNoSeSuperponen(){
 		assertFalse(GrafoMaterias.seSuperpone(matematica, fisica));
+	}
+	
+	@Test
+	public void testColoreoMinimo(){
+		ArrayList<Materia> materias = new ArrayList<>();
+
+		materias.add(fisica);
+		materias.add(historia);
+		materias.add(programacion);
+		
+		GrafoMaterias grafoMaterias = new GrafoMaterias(materias);
+		HashMap<Integer, ArrayList<Integer>> coloreo = grafoMaterias.obtenerColoreo();
+		System.out.println(coloreo.toString());
 	}
 }

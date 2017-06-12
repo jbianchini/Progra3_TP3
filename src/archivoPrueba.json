@@ -1,24 +1,44 @@
-{
-	"materias": [
-		{
-			"nombre": "matematica", 
-			"inicio": 1000,
-			"fin": 1200
-		},
-		{
-			"nombre": "fisica", 
-			"inicio": 1100,
-			"fin": 1300
-		},
-		{
-			"nombre": "programacion", 
-			"inicio": 1800,
-			"fin": 2000
-		},
-		{
-			"nombre": "literatura", 
-			"inicio": 1500,
-			"fin": 1700
-		}
-	]
+{  
+   "_materias":[  
+      {  
+         "_nombre":"Matematica",
+         "_hora_inicio":1100,
+         "_hora_fin":1200
+      },
+      {  
+         "_nombre":"Historia",
+         "_hora_inicio":1100,
+         "_hora_fin":1200
+      },
+      {  
+         "_nombre":"Fisica",
+         "_hora_inicio":1400,
+         "_hora_fin":1600
+      },
+      {  
+         "_nombre":"Matematica",
+         "_hora_inicio":1500,
+         "_hora_fin":1800
+      },
+	  {  
+         "_nombre":"Algebra",
+         "_hora_inicio":1350,
+         "_hora_fin":1450
+      },
+	  {  
+         "_nombre":"Calculo",
+         "_hora_inicio":1630,
+         "_hora_fin":1830
+      },
+	  {  
+         "_nombre":"Lectoescritura",
+         "_hora_inicio":1030,
+         "_hora_fin":1430
+      },
+	  {  
+         "_nombre":"PSEC",
+         "_hora_inicio":900,
+         "_hora_fin":1200
+      }
+   ]
 }
