@@ -14,6 +14,11 @@ public class Loader {
 		return cargarArchivo(ruta);
 	}
 	
+	/**
+	 * Inicializa un GSON e intenta cargarlo en la clase ArchivoJSON
+	 * @param ruta es la ruta del archivo.
+	 * @return ArrayList de materias. (o null)
+	 */
 	private static ArrayList<Materia> cargarArchivo(String ruta){
 		
 		Gson gson = new Gson();

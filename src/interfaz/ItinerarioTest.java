@@ -3,9 +3,8 @@ package interfaz;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.TreeMap;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import materias.GrafoMaterias;
@@ -34,7 +33,7 @@ public class ItinerarioTest {
 	public void testItinerario() {
 		GrafoMaterias grafoMaterias = new GrafoMaterias(crearArregloMaterias());;
 		
-		HashMap<Integer, ArrayList<Integer>> coloreo = grafoMaterias.obtenerColoreo();
+		TreeMap<Integer, ArrayList<Integer>> coloreo = grafoMaterias.obtenerColoreo();
 		
 		itinerario = new Itinerario(coloreo, grafoMaterias.getMaterias());
 	}

@@ -4,10 +4,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -38,12 +35,12 @@ public class Tabla extends JDialog {
 		this.setLocation((pantallaTamano.width/2)-(this.getWidth()/2), (pantallaTamano.height/2)-(this.getHeight()/2)); 
 				
 		{
-			JTable tblEjemplo = new JTable();
-	        JScrollPane scpEjemplo= new JScrollPane();
-	        DefaultTableModel dtmEjemplo = new DefaultTableModel(getFilas(),
+			JTable tablaMostrar = new JTable();
+	        JScrollPane scrollPanel= new JScrollPane();
+	        DefaultTableModel tableModel = new DefaultTableModel(getFilas(),
 	                                                             getColumnas());
 	 
-	        tblEjemplo=new JTable(dtmEjemplo){
+	        tablaMostrar=new JTable(tableModel){
 			
 	        private static final long serialVersionUID = 1L;
 
@@ -51,11 +48,11 @@ public class Tabla extends JDialog {
 	            return false;
 	        }}; 
 	        
-	        tblEjemplo.setModel(dtmEjemplo);
-	        scpEjemplo.add(tblEjemplo);
-	        this.add(scpEjemplo);
+	        tablaMostrar.setModel(tableModel);
+	        scrollPanel.add(tablaMostrar);
+	        this.add(scrollPanel);
 	        this.setSize(500, 300);
-	        scpEjemplo.setViewportView(tblEjemplo);
+	        scrollPanel.setViewportView(tablaMostrar);
 		}
 		{
 			JPanel buttonPane = new JPanel();
@@ -64,23 +61,31 @@ public class Tabla extends JDialog {
 		}
 	}
 	
+	/**
+	 * El metodo hace visible la tabla, para que pueda visualizarse cuando es llamado.
+	 */
 	public void mostrar(){
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setVisible(true);
 	}
 	
+	/**
+	 * El metodo recorre un arreglo de filas y columnas, y por cada cambio de materia
+	 * llena una fila nueva con el nombre y los horarios.
+	 * @return tabla armada, llena con nombre de aula y materias que contiene.
+	 */
 	private Object[][] getFilas(){
-		Object fila [][] = new Object [_itinerario.getMateriasSize()][2];
+		Object tabla [][] = new Object [_itinerario.getMateriasSize()][2];
 
 		int i = 0;
-		for(Entry<String, ArrayList<Materia>> asignacion: _itinerario.getItinerario().entrySet()){
-			fila[i][0] = asignacion.getKey();
+		for(Entry<String, ArrayList<Materia>> asignacion: _itinerario.obtenerItinerario().entrySet()){
+			tabla[i][0] = asignacion.getKey();
 			for (int j=0;j<asignacion.getValue().size();j++){
-				fila[i][1] = asignacion.getValue().get(j);
+				tabla[i][1] = asignacion.getValue().get(j);
 				i++;
 				
 			}
-		}  return fila;
+		}  return tabla;
 	}
 	
 	private String[] getColumnas(){

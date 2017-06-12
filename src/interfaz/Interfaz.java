@@ -1,27 +1,30 @@
 package interfaz;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import loader.Loader;
 import materias.GrafoMaterias;
 import materias.Materia;
 
 public class Interfaz {
+	/*
+	 * Esta clase representa un controlador de las clases de negocio inferiores.
+	 * Se encarga de que la clase Loader cargue el archivo, se inicialice un grafo,
+	 * y crear un itinerario que contenga los datos mencionados.
+	 */
 	
 	public Itinerario ObtenerItinerario(String archivo){
 		
 		ArrayList<Materia> materias = cargarMaterias(archivo);
 		GrafoMaterias grafoMaterias = crearGrafo(materias);
-		Itinerario itinerario = calcularItinerario(grafoMaterias);
+		Itinerario itinerario = crearItinerario(grafoMaterias);
 				
 		return itinerario;
 	}
 
 
 	private ArrayList<Materia> cargarMaterias(String archivo) {
-		Loader loader = new Loader();
-		ArrayList<Materia> materias = loader.obtenerMaterias(archivo);
+		ArrayList<Materia> materias = Loader.obtenerMaterias(archivo);
 		return materias;
 	}
 	
@@ -30,7 +33,7 @@ public class Interfaz {
 		return grafoMaterias;
 	}
 
-	private Itinerario calcularItinerario(GrafoMaterias grafo) {
+	private Itinerario crearItinerario(GrafoMaterias grafo) {
 		return new Itinerario(grafo.obtenerColoreo(), grafo.getMaterias());
 	}
 }

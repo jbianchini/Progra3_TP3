@@ -5,7 +5,10 @@ public class Materia {
 	private int _hora_inicio;
 	private int _hora_fin;
 	
-	//TODO: ver como hacer para poder introducir las horas con regular expression, para evitar que se vayan de rango
+	/*
+	 * Materia utiliza dos variables hora de inicio y finalizacion que son numeros enteros. Para realizar
+	 * la asignacion, es importante que hora de inicio sea menor.
+	 */
 	public Materia(String nombre, int hora_inicio, int hora_fin, int indice){
 		verificarHorario(hora_inicio, hora_fin);
 		_nombre = nombre;
@@ -13,11 +16,14 @@ public class Materia {
 		_hora_fin = hora_fin;
 	}
 	
+	/**
+	 * Verifica que la hora de inicio no sea mayor a la de finalizacion.
+	 * @param hora_inicio integer
+	 * @param hora_fin integer
+	 */
 	private void verificarHorario(int hora_inicio, int hora_fin){
 		if (hora_inicio >= hora_fin)
 			throw new IllegalArgumentException("Se intento agregar un horario de inicio mayor o igual al de finalizacion.");
-		
-		// Se debe verificar que la hora de inicio y fin no sea mayor a 24 o menor a 0
 	}
 
 	public String get_nombre() {

@@ -3,9 +3,8 @@ package materias;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.TreeMap;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class GrafoMateriasTest {
@@ -14,7 +13,7 @@ public class GrafoMateriasTest {
 	Materia fisica = new Materia("Fisica", 1400, 1600, 2);
 	Materia programacion = new Materia("Programacion", 1500, 1800, 3);
 	
-	@Ignore
+	@Test
 	public void testGrafoMaterias(){
 		ArrayList<Materia> materias = new ArrayList<>();
 		
@@ -24,6 +23,7 @@ public class GrafoMateriasTest {
 		materias.add(programacion);
 		
 		GrafoMaterias grafoMaterias = new GrafoMaterias(materias);
+		System.out.println(grafoMaterias.toString());
 	}
 	
 	@Test
@@ -55,7 +55,18 @@ public class GrafoMateriasTest {
 		materias.add(programacion);
 		
 		GrafoMaterias grafoMaterias = new GrafoMaterias(materias);
-		HashMap<Integer, ArrayList<Integer>> coloreo = grafoMaterias.obtenerColoreo();
-		System.out.println(coloreo.toString());
+		TreeMap<Integer, ArrayList<Integer>> coloreo = grafoMaterias.obtenerColoreo();
+		
+		TreeMap<Integer, ArrayList<Integer>> coloreo2 = new TreeMap<>();
+		ArrayList<Integer> list1 = new ArrayList<>();
+		ArrayList<Integer> list2 = new ArrayList<>();
+		
+		list1.add(0);
+		list1.add(1);
+		list2.add(2);
+		coloreo2.put(1, list1);
+		coloreo2.put(2, list2);
+		
+		assertEquals(coloreo2, coloreo);
 	}
 }

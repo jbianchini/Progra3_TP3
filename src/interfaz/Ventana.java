@@ -9,7 +9,6 @@ import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -18,9 +17,6 @@ public class Ventana {
 	private JFrame frame;
 	private JTextField campoRuta;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -34,16 +30,10 @@ public class Ventana {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Ventana() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 481, 193);
@@ -69,7 +59,6 @@ public class Ventana {
 		
 		
 		// ACTION LISTENERS
-		
 		botonSeleccionar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
