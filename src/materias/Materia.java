@@ -51,8 +51,7 @@ public class Materia {
 	}
 	
 	public String toString(){
-		return _nombre + " de " +_hora_inicio+" a "+_hora_fin +"\n";
+		return _nombre + " de " + _hora_inicio + " a " +_hora_fin + "\n";
 	}
-	
 	
 }

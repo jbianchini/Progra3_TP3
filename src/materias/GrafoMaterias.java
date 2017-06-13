@@ -52,6 +52,7 @@ public class GrafoMaterias extends Grafo {
 	
 	/**
 	 * Este es el metodo principal que obtiene el coloreo (asignacion de colores a los vertices).
+	 * Cada color es representado por un numero.
 	 * @return diccionario de colores y listas de vertices.
 	 * VER: Coloreo de Grafos, Obtencion de numero cromatico.
 	 */
