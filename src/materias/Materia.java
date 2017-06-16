@@ -1,6 +1,6 @@
 package materias;
 
-public class Materia {
+public class Materia{
 	private String _nombre;
 	private int _hora_inicio;
 	private int _hora_fin;
@@ -53,5 +53,16 @@ public class Materia {
 	public String toString(){
 		return _nombre + " de " + _hora_inicio + " a " +_hora_fin + "\n";
 	}
+	
+//	@Override
+//	public int compareTo(Materia arg0) {
+//		if (_hora_inicio < arg0._hora_inicio) {
+//            return -1;
+//        }
+//        if (_hora_inicio > arg0._hora_inicio) {
+//            return 1;
+//        }
+//        return 0;
+//	}
 	
 }

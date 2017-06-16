@@ -51,7 +51,7 @@ public class Tabla extends JDialog {
 	        tablaMostrar.setModel(tableModel);
 	        scrollPanel.add(tablaMostrar);
 	        this.add(scrollPanel);
-	        this.setSize(500, 300);
+	        this.setSize(800, 400);
 	        scrollPanel.setViewportView(tablaMostrar);
 		}
 		{

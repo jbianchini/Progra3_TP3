@@ -39,6 +39,46 @@
          "_nombre":"PSEC",
          "_hora_inicio":900,
          "_hora_fin":1200
+      },
+      {  
+         "_nombre":"SOR",
+         "_hora_inicio":1900,
+         "_hora_fin":2100
+      },
+      {  
+         "_nombre":"Logica",
+         "_hora_inicio":1030,
+         "_hora_fin":1230
+      },
+      {  
+         "_nombre":"Quimica",
+         "_hora_inicio":1440,
+         "_hora_fin":1640
+      },
+      {  
+         "_nombre":"Administracion",
+         "_hora_inicio":1220,
+         "_hora_fin":1520
+      },
+	  {  
+         "_nombre":"Algebra Lineal",
+         "_hora_inicio":1800,
+         "_hora_fin":2000
+      },
+	  {  
+         "_nombre":"Organizacion del computador",
+         "_hora_inicio":1730,
+         "_hora_fin":2200
+      },
+	  {  
+         "_nombre":"Laboratorio",
+         "_hora_inicio":1130,
+         "_hora_fin":1310
+      },
+	  {  
+         "_nombre":"Materia ficticia",
+         "_hora_inicio":800,
+         "_hora_fin":1130
       }
    ]
 }

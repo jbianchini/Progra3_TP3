@@ -26,6 +26,7 @@ public class GrafoMaterias extends Grafo {
 	 * los vertices que representan a cada una.
 	 */
 	private void agregarSuperposiciones(){
+		ordenarMaterias();
 		for (int m=0; m<_materias.size();m++)
 			for(int o=0; o<_materias.size();o++){
 				Materia materia = _materias.get(m);
@@ -33,6 +34,10 @@ public class GrafoMaterias extends Grafo {
 				if (!materia.equals(otra) && seSuperpone(materia, otra))
 					agregarArista(m, o);
 			}
+	}
+	
+	private void ordenarMaterias(){
+		Collections.sort(_materias, (p,q) -> p.get_hora_inicio() - q.get_hora_inicio());
 	}
 	
 	/**
